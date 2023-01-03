@@ -39,7 +39,11 @@ export class AdminAuthService {
         this.SetUserData(result.user);
         this.afAuth.authState.subscribe((user) => {
           if (user) {
-            this.router.navigate(['admin-dashboard']);
+            if (user.emailVerified == true) {
+              this.router.navigate(['admin-dashboard']);
+            } else {
+              this.router.navigate(['verify-email']);
+            }
           }
         });
       })

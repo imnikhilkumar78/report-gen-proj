@@ -17,6 +17,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdSidebarComponent } from './ad-sidebar/ad-sidebar.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     UserLoginComponent,
     FooterComponent,
     AdminDashboardComponent,
+    AdSidebarComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,

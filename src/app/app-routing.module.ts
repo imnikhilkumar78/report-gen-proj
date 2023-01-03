@@ -4,6 +4,7 @@ import { HomeDashboardComponent } from './home-dashboard/home-dashboard.componen
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home-dashboard', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'admin-login', component: AdminLoginComponent },
   { path: 'user-login', component: UserLoginComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
+  { path: 'verify-email', component: VerifyEmailComponent },
 ];
 
 @NgModule({
