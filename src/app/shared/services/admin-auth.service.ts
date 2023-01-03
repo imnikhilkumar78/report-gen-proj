@@ -55,7 +55,7 @@ export class AdminAuthService {
         this.router.navigate(['verify-email-address']);
       });
   }
-  // Reset Forggot password
+  // Reset Forgot password
   ForgotPassword(passwordResetEmail: string) {
     return this.afAuth
       .sendPasswordResetEmail(passwordResetEmail)
