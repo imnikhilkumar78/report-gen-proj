@@ -9,6 +9,15 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { FooterComponent } from './footer/footer.component';
 
+//Firebase
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,13 +25,21 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     AdminLoginComponent,
     UserLoginComponent,
-    FooterComponent
+    FooterComponent,
+    AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    [
+      AngularFireModule.initializeApp(environment.firebase),
+      AngularFireAuthModule,
+      AngularFirestoreModule,
+      AngularFireStorageModule,
+      AngularFireDatabaseModule,
+    ],
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
