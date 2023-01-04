@@ -12,13 +12,13 @@ import { FooterComponent } from './footer/footer.component';
 //Firebase
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
 import { environment } from '../environments/environment';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdSidebarComponent } from './ad-sidebar/ad-sidebar.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { ListNormalUsersComponent } from './list-normal-users/list-normal-users.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +31,7 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     AdminDashboardComponent,
     AdSidebarComponent,
     VerifyEmailComponent,
+    ListNormalUsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,8 +40,6 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
       AngularFireModule.initializeApp(environment.firebase),
       AngularFireAuthModule,
       AngularFirestoreModule,
-      AngularFireStorageModule,
-      AngularFireDatabaseModule,
     ],
   ],
   providers: [],

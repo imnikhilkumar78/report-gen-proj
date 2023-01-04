@@ -91,4 +91,18 @@ export class AdminAuthService {
       merge: true,
     });
   }
+
+  //logout
+  SignOut() {
+    return this.afAuth.signOut().then(() => {
+      localStorage.removeItem('user');
+      this.router.navigate(['home-dashboard']);
+    });
+  }
+
+  //CRUD FUNCTIONALITIES
+  //List all Users
+  getUserList() {
+    return this.afs.collection('normal-users').snapshotChanges();
+  }
 }
