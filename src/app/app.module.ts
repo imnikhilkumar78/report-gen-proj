@@ -19,6 +19,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdSidebarComponent } from './ad-sidebar/ad-sidebar.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { ListNormalUsersComponent } from './list-normal-users/list-normal-users.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ListNormalUsersComponent } from './list-normal-users/list-normal-users.
     AdSidebarComponent,
     VerifyEmailComponent,
     ListNormalUsersComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,

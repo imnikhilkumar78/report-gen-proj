@@ -6,6 +6,7 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { ListNormalUsersComponent } from './list-normal-users/list-normal-users.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home-dashboard', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'admin-dashboard', component: AdminDashboardComponent },
   { path: 'list-normal-user', component: ListNormalUsersComponent },
   { path: 'verify-email', component: VerifyEmailComponent },
+  { path: 'forget-password', component:ForgotPasswordComponent}
 ];
 
 @NgModule({
