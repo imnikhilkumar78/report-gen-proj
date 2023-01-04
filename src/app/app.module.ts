@@ -23,6 +23,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AddNormalUserComponent } from './add-normal-user/add-normal-user.component';
 import { AdminAuthService } from './shared/services/admin-auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddReportComponent } from './add-report/add-report.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListNormalUsersComponent,
     ForgotPasswordComponent,
     AddNormalUserComponent,
+    AddReportComponent,
   ],
   imports: [
     BrowserModule,

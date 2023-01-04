@@ -12,6 +12,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   providedIn: 'root',
 })
 export class AdminAuthService {
+  uid: string; //to save userId
   userData: any; //to save logged in user data
   constructor(
     public afs: AngularFirestore, //Injecting Firestore Services
@@ -117,6 +118,34 @@ export class AdminAuthService {
 
   //function
   createNewUser(userData) {
-    this.afs.collection('normal-users').add(userData);
+    this.afs.collection('normal-users').doc(userData.uid).set(userData);
+  }
+
+  //add-report
+  formReport = new FormGroup({
+    rid: new FormControl(''),
+    productivity: new FormControl(''),
+    weeklyProdPoint: new FormControl(''),
+    productivityPoint: new FormControl(''),
+    PKTScore: new FormControl(''),
+    escalations: new FormControl(''),
+    qualityPoint: new FormControl(''),
+    identification: new FormControl(''),
+    documentation: new FormControl(''),
+    implementation: new FormControl(''),
+    knowledgeScore: new FormControl(''),
+    leaveAdherence: new FormControl(''),
+    ownershipPoints: new FormControl(''),
+  });
+
+  getUserId(uid: string) {
+    this.uid = uid;
+    console.log(this.uid);
+  }
+
+  createNewReport(reportData) {
+    this.afs
+      .collection('normal-users/' + this.uid + '/reports')
+      .add(reportData);
   }
 }

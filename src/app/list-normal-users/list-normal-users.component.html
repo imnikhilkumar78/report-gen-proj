@@ -7,6 +7,8 @@
         <tr>
           <th class="py-3 px-6">Name</th>
           <th class="py-3 px-6">Email</th>
+          <th class="py-3 px-6"></th>
+          <th class="py-3 px-6"></th>
         </tr>
       </thead>
       <tbody>
@@ -16,13 +18,29 @@
         >
           <td class="py-3 px-6">{{ user.UserName }}</td>
           <td class="py-3 px-6">{{ user.UserEmail }}</td>
+          <td class="py-3 px-6">
+            <button
+              [routerLink]="['/add-report']"
+              (click)="getUserId(user.uid)"
+              class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              Add Report
+            </button>
+          </td>
+          <td class="py-3 px-6">
+            <button
+              class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              View Report
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
-  <a
+  <!-- <a
     class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
     [routerLink]="'/add-normal-user'"
     >Add User</a
-  >
+  > -->
 </main>
