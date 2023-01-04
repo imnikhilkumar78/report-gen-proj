@@ -6,6 +6,7 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -104,5 +105,18 @@ export class AdminAuthService {
   //List all Users
   getUserList() {
     return this.afs.collection('normal-users').snapshotChanges();
+  }
+
+  //To Add New Normal User
+  form = new FormGroup({
+    uid: new FormControl(''),
+    UserName: new FormControl(''),
+    UserEmail: new FormControl(''),
+    userPassword: new FormControl(''),
+  });
+
+  //function
+  createNewUser(userData) {
+    this.afs.collection('normal-users').add(userData);
   }
 }

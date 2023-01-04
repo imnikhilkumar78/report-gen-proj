@@ -20,6 +20,9 @@ import { AdSidebarComponent } from './ad-sidebar/ad-sidebar.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { ListNormalUsersComponent } from './list-normal-users/list-normal-users.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AddNormalUserComponent } from './add-normal-user/add-normal-user.component';
+import { AdminAuthService } from './shared/services/admin-auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     VerifyEmailComponent,
     ListNormalUsersComponent,
     ForgotPasswordComponent,
+    AddNormalUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,8 +47,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
       AngularFireAuthModule,
       AngularFirestoreModule,
     ],
+    [FormsModule, ReactiveFormsModule],
   ],
-  providers: [],
+  providers: [AdminAuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
