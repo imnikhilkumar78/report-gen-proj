@@ -124,6 +124,7 @@ export class AdminAuthService {
   //add-report
   formReport = new FormGroup({
     rid: new FormControl(''),
+    reportMonth: new FormControl(''),
     productivity: new FormControl(''),
     weeklyProdPoint: new FormControl(''),
     productivityPoint: new FormControl(''),
@@ -147,5 +148,11 @@ export class AdminAuthService {
     this.afs
       .collection('normal-users/' + this.uid + '/reports')
       .add(reportData);
+  }
+
+  getUserReports() {
+    return this.afs
+      .collection('normal-users/' + this.uid + '/reports')
+      .snapshotChanges();
   }
 }

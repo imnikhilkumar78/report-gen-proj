@@ -9,6 +9,7 @@ import { ListNormalUsersComponent } from './list-normal-users/list-normal-users.
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AddNormalUserComponent } from './add-normal-user/add-normal-user.component';
 import { AddReportComponent } from './add-report/add-report.component';
+import { ViewReportComponent } from './view-report/view-report.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home-dashboard', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'forget-password', component: ForgotPasswordComponent },
   { path: 'add-normal-user', component: AddNormalUserComponent },
   { path: 'add-report', component: AddReportComponent },
+  { path: 'view-report', component: ViewReportComponent },
 ];
 
 @NgModule({

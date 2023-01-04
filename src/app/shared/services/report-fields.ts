@@ -1,5 +1,6 @@
 export interface ReportFields {
   rid: string;
+  reportMonth:string;
   productivity: string;
   weeklyProdPoint: string;
   productivityPoint: string;

@@ -24,6 +24,7 @@ import { AddNormalUserComponent } from './add-normal-user/add-normal-user.compon
 import { AdminAuthService } from './shared/services/admin-auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddReportComponent } from './add-report/add-report.component';
+import { ViewReportComponent } from './view-report/view-report.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AddReportComponent } from './add-report/add-report.component';
     ForgotPasswordComponent,
     AddNormalUserComponent,
     AddReportComponent,
+    ViewReportComponent,
   ],
   imports: [
     BrowserModule,
