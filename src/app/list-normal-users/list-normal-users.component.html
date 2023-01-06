@@ -2,7 +2,7 @@
   <div class="overflow-x-auto relative">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
       <thead
-        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        class="text-xs text-gray-700 uppercase bg-red-50 dark:bg-red-50 dark:text-gray-900"
       >
         <tr>
           <th class="py-3 px-6">Name</th>
@@ -14,7 +14,7 @@
       <tbody>
         <tr
           *ngFor="let user of listNormalUsers"
-          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+          class="bg-white border-b dark:bg-stone-50 dark:border-gray-700"
         >
           <td class="py-3 px-6">{{ user.UserName }}</td>
           <td class="py-3 px-6">{{ user.UserEmail }}</td>

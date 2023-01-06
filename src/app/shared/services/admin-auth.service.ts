@@ -147,7 +147,8 @@ export class AdminAuthService {
   createNewReport(reportData) {
     this.afs
       .collection('normal-users/' + this.uid + '/reports')
-      .add(reportData);
+      .doc(reportData.rid)
+      .set(reportData);
   }
 
   getUserReports() {

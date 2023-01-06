@@ -25,6 +25,8 @@ import { AdminAuthService } from './shared/services/admin-auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddReportComponent } from './add-report/add-report.component';
 import { ViewReportComponent } from './view-report/view-report.component';
+import { UserAuthService } from './shared/services/user-auth.service';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { ViewReportComponent } from './view-report/view-report.component';
     AddNormalUserComponent,
     AddReportComponent,
     ViewReportComponent,
+    UserDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,7 @@ import { ViewReportComponent } from './view-report/view-report.component';
     ],
     [FormsModule, ReactiveFormsModule],
   ],
-  providers: [AdminAuthService],
+  providers: [AdminAuthService, UserAuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,10 +1,10 @@
 <app-ad-sidebar></app-ad-sidebar>
 
-<main class="ml-80 mt-5">
+<main class="ml-64">
   <div class="overflow-x-auto relative">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
       <thead
-        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-50 dark:text-gray-900"
       >
         <tr>
           <th class="py-3 px-6">Report Month</th>
@@ -25,7 +25,7 @@
       <tbody>
         <tr
           *ngFor="let report of listReports"
-          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+          class="bg-white border-b dark:bg-stone-50 dark:border-gray-700"
         >
           <td class="py-3 px-6">{{ report.reportMonth }}</td>
           <td class="py-3 px-6">{{ report.productivity }}</td>

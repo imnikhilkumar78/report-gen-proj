@@ -10,19 +10,49 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AddNormalUserComponent } from './add-normal-user/add-normal-user.component';
 import { AddReportComponent } from './add-report/add-report.component';
 import { ViewReportComponent } from './view-report/view-report.component';
+//guard
+import { AuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home-dashboard', pathMatch: 'full' },
   { path: 'home-dashboard', component: HomeDashboardComponent },
   { path: 'admin-login', component: AdminLoginComponent },
   { path: 'user-login', component: UserLoginComponent },
-  { path: 'admin-dashboard', component: AdminDashboardComponent },
-  { path: 'list-normal-user', component: ListNormalUsersComponent },
-  { path: 'verify-email', component: VerifyEmailComponent },
-  { path: 'forget-password', component: ForgotPasswordComponent },
-  { path: 'add-normal-user', component: AddNormalUserComponent },
-  { path: 'add-report', component: AddReportComponent },
-  { path: 'view-report', component: ViewReportComponent },
+  {
+    path: 'admin-dashboard',
+    component: AdminDashboardComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'list-normal-user',
+    component: ListNormalUsersComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'verify-email',
+    component: VerifyEmailComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'forget-password',
+    component: ForgotPasswordComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'add-normal-user',
+    component: AddNormalUserComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'add-report',
+    component: AddReportComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'view-report',
+    component: ViewReportComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({
