@@ -1,0 +1,50 @@
+<main class="ml-64">
+  <div class="overflow-x-auto relative">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead
+        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-50 dark:text-gray-900"
+      >
+        <tr>
+          <th class="py-3 px-6">Report Month</th>
+          <th class="py-3 px-6">Productivity</th>
+          <th class="py-3 px-6">weekly Prod Point</th>
+          <th class="py-3 px-6">ProductivityPoint</th>
+          <th class="py-3 px-6">PKTScore</th>
+          <th class="py-3 px-6">Escalations</th>
+          <th class="py-3 px-6">Quality Point</th>
+          <th class="py-3 px-6">Identification</th>
+          <th class="py-3 px-6">Documentation</th>
+          <th class="py-3 px-6">Implementation</th>
+          <th class="py-3 px-6">Knowledge Score</th>
+          <th class="py-3 px-6">LeaveAdherence</th>
+          <th class="py-3 px-6">OwnershipPoints</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let report of listReports"
+          class="bg-white border-b dark:bg-stone-50 dark:border-gray-700"
+        >
+          <td class="py-3 px-6">{{ report.reportMonth }}</td>
+          <td class="py-3 px-6">{{ report.productivity }}</td>
+          <td class="py-3 px-6">{{ report.weeklyProdPoint }}</td>
+          <td class="py-3 px-6">{{ report.productivityPoint }}</td>
+          <td class="py-3 px-6">{{ report.PKTScore }}</td>
+          <td class="py-3 px-6">{{ report.escalations }}</td>
+          <td class="py-3 px-6">{{ report.qualityPoint }}</td>
+          <td class="py-3 px-6">{{ report.identification }}</td>
+          <td class="py-3 px-6">{{ report.documentation }}</td>
+          <td class="py-3 px-6">{{ report.implementation }}</td>
+          <td class="py-3 px-6">{{ report.knowledgeScore }}</td>
+          <td class="py-3 px-6">{{ report.leaveAdherence }}</td>
+          <td class="py-3 px-6">{{ report.ownershipPoints }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- <a
+    class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+    [routerLink]="'/add-normal-user'"
+    >Add User</a
+  > -->
+</main>

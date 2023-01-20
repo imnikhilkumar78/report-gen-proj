@@ -27,6 +27,9 @@ import { AddReportComponent } from './add-report/add-report.component';
 import { ViewReportComponent } from './view-report/view-report.component';
 import { UserAuthService } from './shared/services/user-auth.service';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { UserHeaderComponent } from './user-header/user-header.component';
+import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
+import { UserReportsComponent } from './user-reports/user-reports.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,9 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     AddReportComponent,
     ViewReportComponent,
     UserDashboardComponent,
+    UserHeaderComponent,
+    UserSidebarComponent,
+    UserReportsComponent,
   ],
   imports: [
     BrowserModule,
