@@ -12,6 +12,7 @@ import { AddReportComponent } from './add-report/add-report.component';
 import { ViewReportComponent } from './view-report/view-report.component';
 //guard
 import { AuthGuard } from './shared/guard/auth.guard';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home-dashboard', pathMatch: 'full' },
@@ -53,6 +54,7 @@ const routes: Routes = [
     component: ViewReportComponent,
     canActivate: [AuthGuard],
   },
+  { path: 'user-dashboard', component: UserDashboardComponent },
 ];
 
 @NgModule({

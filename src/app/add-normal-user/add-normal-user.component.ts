@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminAuthService } from '../shared/services/admin-auth.service';
 import { NormalUsers } from '../shared/services/normal-users';
 import { FormGroup, FormBuilder } from '@angular/forms';
-
+import * as crypto from 'crypto-js';
 @Component({
   selector: 'app-add-normal-user',
   templateUrl: './add-normal-user.component.html',
@@ -19,6 +19,8 @@ export class AddNormalUserComponent implements OnInit {
   ngOnInit(): void {}
   onSubmit() {
     const userData = this.authService.form.value;
+    const encryptedPassword = crypto.SHA512(userData.userPassword).toString();
+    userData.userPassword=encryptedPassword;
     this.authService.createNewUser(userData);
     this.showMsg = true;
 

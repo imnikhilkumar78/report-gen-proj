@@ -18,4 +18,15 @@ export class UserAuthService {
     public router: Router,
     public ngZone: NgZone //NgZone Services to remove outside scope warning)
   ) {}
+
+  getAllNormalUsers() {
+    return this.afs.collection('normal-users').snapshotChanges();
+  }
+  getUserWithEmail(userEmail) {
+    return this.afs
+      .collection('normal-users', (ref) =>
+        ref.where('UserEmail', '==', userEmail)
+      )
+      .valueChanges();
+  }
 }
