@@ -17,20 +17,22 @@ export class UserLoginComponent implements OnInit {
   ngOnInit(): void {}
   login(userEmail, UserPassword) {
     this.foundUser = this.userService.getUserWithEmail(userEmail);
-
     this.foundUser.subscribe((users) => {
-      for (let user of users) {
-        this.uemail = user.UserEmail;
-        this.uPassword = user.userPassword;
-        const encryptedPassword = crypto
-          .SHA512(UserPassword.toString())
-          .toString();
-        if (this.uemail == userEmail && this.uPassword == encryptedPassword) {
-          console.log('Success');
-          this.router.navigate(['/user-dashboard']);
-        } else {
-          alert('Incorrect UserEmail or Password');
+      if (users.length > 0) {
+        for (let user of users) {
+          this.uemail = user.UserEmail;
+          this.uPassword = user.userPassword;
+          const encryptedPassword = crypto
+            .SHA512(UserPassword.toString())
+            .toString();
+          if (this.uemail == userEmail && this.uPassword == encryptedPassword) {
+            this.router.navigate(['/user-dashboard']);
+          } else {
+            alert('Incorrect UserEmail or Password');
+          }
         }
+      } else {
+        alert('Email does not exist, Contact your manager');
       }
     });
   }
