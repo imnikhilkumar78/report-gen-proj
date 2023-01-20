@@ -18,7 +18,7 @@ export class UserLoginComponent implements OnInit {
   login(userEmail, UserPassword) {
     this.foundUser = this.userService.getUserWithEmail(userEmail);
     this.foundUser.subscribe((users) => {
-      if (users.length > 0) {
+      if ((users.length == 1)) {
         for (let user of users) {
           this.uemail = user.UserEmail;
           this.uPassword = user.userPassword;
