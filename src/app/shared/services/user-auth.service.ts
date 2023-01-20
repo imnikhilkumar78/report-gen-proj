@@ -12,6 +12,8 @@ import { FormGroup, FormControl } from '@angular/forms';
   providedIn: 'root',
 })
 export class UserAuthService {
+  userServiceData: any;
+  uid: any;
   constructor(
     public afs: AngularFirestore, //Injecting Firestore Services
     public afAuth: AngularFireAuth, //Injecting Firebase auth Services
@@ -28,5 +30,17 @@ export class UserAuthService {
         ref.where('UserEmail', '==', userEmail)
       )
       .valueChanges();
+  }
+
+  getUserReports() {
+    this.uid = this.userServiceData.uid;
+    return this.afs
+      .collection('normal-users/' + this.uid + '/reports')
+      .snapshotChanges();
+  }
+
+  signOut() {
+    localStorage.removeItem('loggedInNormalUser');
+    this.router.navigate(['home-dashboard']);
   }
 }
