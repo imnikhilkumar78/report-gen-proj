@@ -18,4 +18,8 @@ export class UserAuthService {
     public router: Router,
     public ngZone: NgZone //NgZone Services to remove outside scope warning)
   ) {}
+
+  getAllNormalUsers(){
+
+  }
 }
